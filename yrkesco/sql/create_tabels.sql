@@ -18,10 +18,12 @@ CREATE TABLE Utbildare (
     förnamn VARCHAR(100),
     efternamn VARCHAR(100),
     personnummer VARCHAR(20),
-    email VARCHAR(100),
+    email VARCHAR(100) UNIQUE,  -- Unik constraint på email
     ort_id INT,
     FOREIGN KEY (ort_id) REFERENCES Ort(ort_id)
 );
+
+
 
 CREATE TABLE Konsult (
     utbildare_id INT PRIMARY KEY,
